@@ -3,8 +3,8 @@
 # @c: input string to check
 
 def islower(c):
-    for ordinal in range(65, 98):
-        if ((c) == chr(c)):
+    for n in range(65, 98):
+        if ord(c):
             print(True)
         else:
             print(False)
