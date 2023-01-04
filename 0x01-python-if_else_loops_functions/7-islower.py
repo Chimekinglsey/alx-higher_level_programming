@@ -3,7 +3,6 @@
 # @c: input string to check
 
 def islower(c):
-    for n in range(65, 98):
+    for n in range(65, 122):
         if ord(c):
             break
-
