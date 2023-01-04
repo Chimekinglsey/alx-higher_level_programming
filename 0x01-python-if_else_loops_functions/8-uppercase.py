@@ -4,5 +4,5 @@
 def uppercase(str):
     for n in range(65, 98):
         if (str):
-            print().format("")
+            print("{}".format(str))
             break
