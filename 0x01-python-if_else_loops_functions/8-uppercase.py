@@ -3,6 +3,6 @@
 # @c: input string to check
 def uppercase(str):
     for n in range(65, 98):
-        if ord(str):
+        if (str):
             print().format("")
             break
