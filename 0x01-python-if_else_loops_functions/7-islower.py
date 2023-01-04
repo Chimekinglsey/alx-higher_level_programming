@@ -5,7 +5,5 @@
 def islower(c):
     for n in range(65, 98):
         if ord(c):
-           # print(True)
             break
-        else:
-           # print(False)
+
