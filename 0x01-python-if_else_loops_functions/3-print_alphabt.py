@@ -8,4 +8,4 @@ for i in range(97,123):
 		i += 1
 		continue
 
-	print(chr(i),end="")
+	print(({}.format (chr(i)), end="")
