@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-# islower - a function that determines case of input string
-# @c: input string to check
-
 def islower(c):
-    for n in range(97, 122):
-        if ord(c):
-            break
+    if (ord(c) >= 97) and (ord(c) <= 122):
+        return 1
+    else:
+        return 0
