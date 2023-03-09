@@ -5,6 +5,9 @@
 
 def uppercase(str):
     for n in range(65, 91):
+        i = 0;
         if (str):
-            print("{}".format(str + 32))
-            break
+            num = ord(str[i]) + 32
+            i = i + 1
+            print("{}".format(chr(num), end=""))
+    print()
