@@ -8,7 +8,7 @@ if __name__ == "__main__":
         print("{}".format(0))
     elif length == 2:
         print("{}".format(int(argv[1])))
-    elif length > 2:    
+    elif length > 2:
         while (c <= length-1):
             result = result + int(argv[c])
             c = c + 1
