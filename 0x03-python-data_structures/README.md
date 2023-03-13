@@ -1,1 +1,1 @@
-Working on List and other datastructure in python. Python is sweeter than C
+This is a deeper dive into list data structure in python
