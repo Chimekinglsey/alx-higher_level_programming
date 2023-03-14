@@ -6,9 +6,9 @@ the original list"""
     if isinstance(my_list, list):
         lent = len(my_list)
         if idx < 0:
-            return my_list
+            return my_list.copy()
         if idx > lent - 1:
-            return my_list.copy
+            return my_list.copy()
         else:
             copy = my_list.copy()
             copy[idx] = element
