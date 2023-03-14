@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def new_in_list(my_list, idx, element):
-    """Replace an element at given index without modifying 
+    """Replace an element at given index without modifying
 the original list"""
     lent = len(my_list)
     if idx < 0:
