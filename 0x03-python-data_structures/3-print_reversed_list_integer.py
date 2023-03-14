@@ -2,7 +2,8 @@
 
 def print_reversed_list_integer(my_list=[]):
     """Print all integers of a list in reverse order"""
-    lent = len(my_list)
-    for i in range(lent):
-        print("{}".format(my_list[lent - 1]))
-        lent -= 1
+    if my_list is not None:
+        my_list.reverse()
+        lent = len(my_list)
+        for i in range(lent):
+            print("{}".format(my_list[i]))
