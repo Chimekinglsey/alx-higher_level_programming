@@ -1,0 +1,1 @@
+This is the introduction to OBJECT ORIENTED PROGRAMMING Paradigm. Hence forth,we will be learning how to use classes and what the four core components of OOP (Data Encapsulation, Data Abstraction, POlymorphism and Inheritance) really do in Python Programming.
