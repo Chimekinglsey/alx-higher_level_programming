@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This module will create a class of nothing"""
+""" create a class Square with nothing"""
 class Square:
-"""This is an empty Square class"""
+"""Include attributes to Square"""
     pass
