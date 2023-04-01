@@ -37,7 +37,9 @@ class Square:
         """Setter method for position instance"""
         if type(value) is not tuple:
             raise TypeError("position must be a tupple of 2 positive integers")
-        elif value[0] or value[1] is not int:
+        elif (value[0] or value[1]) is not int:
+            raise TypeError("position must be a tupple of 2 positive integers")
+        elif value[0] or value[1] < 0:
             raise TypeError("position must be a tupple of 2 positive integers")
         elif value[0] or value[1] is None:
             raise TypeError("position must be a tupple of 2 positive integers")
@@ -46,12 +48,21 @@ class Square:
     def my_print(self):
         """A method to print square, if squaresize is 0, return empty line"""
         a = self.__size
+        b = self.__position
         if a == 0:
             print()
-        else:
+        elif a > 0 and b[1] > 0:
             for size in range(a):
                 # for size in (self.__position):
-                # print("_", end="")
+                for size in range(b[1]):
+                    print("_", end="")
+                for size in range(a):
+                    print("#", end="")
+                print("")
+        elif a > 0 and b[1] < 1:
+            for size in range(a):
+                for size in range(b[0]):
+                    print("_", end="")
                 for size in range(a):
                     print("#", end="")
                 print("")
