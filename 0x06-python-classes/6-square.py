@@ -49,7 +49,7 @@ class Square:
         if a == 0:
             print()
             return
-        elif a > 0 and b[1] > 0:
+        if a > 0 and b[1] > 0:
             for size in range(a):
                 # for size in (self.__position):
                 for size in range(b[1]):
@@ -57,7 +57,6 @@ class Square:
                 for size in range(a):
                     print("#", end="")
                 print("")
-        return
         elif a > 0 and b[1] < 1:
             for size in range(a):
                 for size in range(b[0]):
