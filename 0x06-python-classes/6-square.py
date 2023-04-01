@@ -8,6 +8,11 @@ class Square:
         """Our code behaviour for class intances follow"""
         self.__size = size
         self.__position = position
+        if (not isinstance(position, tuple) or
+                len(position) != 2 or
+                not all(isinstance(num, int) for num in position) or
+                not all(num >= 0 for num in position)):
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         """This method returns size ** 2"""
@@ -21,7 +26,7 @@ class Square:
     @size.setter
     def size(self, value):
         """This method sets size values"""
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -45,21 +50,22 @@ class Square:
     def my_print(self):
         """A method to print square, if squaresize is 0, return empty line"""
         a = self.__size
-        b = self.__position
+        c = int(self.__position[1])
+        b = int(self.__position[0])
         if a == 0:
             print()
             return
-        if a > 0 and b[1] > 0:
+        if (a and c ) > 0:
             for size in range(a):
                 # for size in (self.__position):
-                for size in range(b[1]):
+                for size in range(c):
                     print("_", end="")
                 for size in range(a):
                     print("#", end="")
                 print("")
-        elif a > 0 and b[1] < 1:
+        elif (a > 0) and c < 1:
             for size in range(a):
-                for size in range(b[0]):
+                for size in range(b):
                     print("_", end="")
                 for size in range(a):
                     print("#", end="")
