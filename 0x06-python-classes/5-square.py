@@ -27,7 +27,7 @@ class Square:
         self.__size = value
 
     def my_print(self):
-        """A method to print square, if size of square is zero(0) thenprints an empty line"""
+        """A method to print square, if squaresize is 0, return empty line"""
         a = self.__size
         if a == 0:
             print()
