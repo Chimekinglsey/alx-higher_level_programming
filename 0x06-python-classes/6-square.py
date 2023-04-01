@@ -55,7 +55,7 @@ class Square:
         if a == 0:
             print()
             return
-        if (a and c ) > 0:
+        if (a and c) > 0:
             for size in range(a):
                 # for size in (self.__position):
                 for size in range(c):
