@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""First create a Square class"""
+"""First create a Square class to start"""
 
 
 class Square:
