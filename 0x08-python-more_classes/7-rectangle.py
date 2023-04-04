@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-#6-rectangles.py
+# 6-rectangles.py
 """Module 1: We will create and work with Rectangle class"""
 
 
 class Rectangle:
     """This will form our blue-print for rectangle objects"""
-    number_of_instances=0
-    print_symbol='#'
+    number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """This is the definition of arguments
@@ -14,7 +14,7 @@ class Rectangle:
         self.width = width
         self.height = height
         type(self).number_of_instances += 1
-        #type(self).print_symbol = type(self).print_symbol
+        # type(self).print_symbol = type(self).print_symbol
 
     @property
     def width(self):
