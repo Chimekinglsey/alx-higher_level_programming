@@ -54,7 +54,8 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 liist.append("#")
-            liist.append('\n')
+            if i != self.height-1:
+                liist.append('\n')
         return "".join(liist)
 
     def perimeter(self):

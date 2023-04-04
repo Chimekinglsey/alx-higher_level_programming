@@ -54,18 +54,18 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 liist.append("#")
-            liist.append('\n')
+            if i != self.__height - 1:
+                liist.append('\n')
         return "".join(liist)
 
     def __repr__(self):
         """ Prints a offical and unformatted version of area"""
-        
-        save = "Rectangle" + "(" + str(self.__width)+ "," + " \
-" + str(self.__height) + ")"
+        save = "Rectangle" + "(" + str(self.__width) + "," + "\
+ " + str(self.__height) + ")"
         return (save)
 
     def perimeter(self):
         """returns perimeter i.e 2(w * h)"""
         if self.__width == 0 or self.height == 0:
             return 0
-        #return (2*(self.__width + self.__height))
+        return (2*(self.__width + self.__height))
