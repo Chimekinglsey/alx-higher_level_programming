@@ -6,12 +6,15 @@
 class Rectangle:
     """This will form our blue-print for rectangle objects"""
     number_of_instances=0
+    print_symbol='#'
+
     def __init__(self, width=0, height=0):
         """This is the definition of arguments
          expected as argument from any object created"""
         self.width = width
         self.height = height
         type(self).number_of_instances += 1
+        #type(self).print_symbol = type(self).print_symbol
 
     @property
     def width(self):
@@ -56,7 +59,7 @@ class Rectangle:
         liist = []
         for i in range(self.__height):
             for j in range(self.__width):
-                liist.append("#")
+                liist.append(type(self).print_symbol)
             if i != self.__height - 1:
                 liist.append('\n')
         return "".join(liist)
