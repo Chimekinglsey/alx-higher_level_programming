@@ -44,16 +44,19 @@ class Rectangle:
 
     def area(self):
         """Returns the area of rectangle"""
-        return(self.__width * self.__height)
+        return (self.__width * self.__height)
 
     def __str__(self):
         """ Prints a unoffical and formatted version of area"""
+        if width == 0 or height == 0:
+            return ""
         liist = []
         for i in range(self.__height):
-            for j in range (self.__width):
+            for j in range(self.__width):
                 liist.append("#")
             liist.append('\n')
         return "".join(liist)
+
     def perimeter(self):
         """returns perimeter i.e 2(w * h)"""
         if self.__width == 0 or self.height == 0:
