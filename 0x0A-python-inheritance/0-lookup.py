@@ -3,5 +3,5 @@
 
 
 def lookup(obj):
-	"""This returns a list of objects in the function"""
-	return (dir(obj))
+    """This returns a list of objects in the function"""
+    return (dir(obj))
