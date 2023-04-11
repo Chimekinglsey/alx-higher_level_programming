@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-"""
+
 ==========================================
 Our function only takes ints into a list
 ==========================================
@@ -23,4 +22,3 @@ Our function only takes ints into a list
 >>> my_list.print_sorted()
 Traceback (most recent call last):
 TypeError
-"""
