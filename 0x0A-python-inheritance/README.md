@@ -1,0 +1,1 @@
+Inheritance is a key feature of OOP. It allows real world modelling of objects, makes for reusable codes thereby reducing memory usage in programming. There are many types of inheritances; single level, multiple level, hierarchical etc. The idea is that a superclass or parent/base class share some of its attributes with a  child class
