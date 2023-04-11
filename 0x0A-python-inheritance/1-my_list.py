@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-"""Module two"""
+# 1-my_list.py
+# Brennan D Baraban <375@holbertonschool.com>
+"""Defines an inherited list class MyList."""
 
 
 class MyList(list):
-    """This is a child class of List superclass"""
-    def __init__(self):
-        """We initialize our class with default self"""
-        list.__init__(self)
+    """Implements sorted printing for the built-in list class."""
 
     def print_sorted(self):
-        """returns a sorted list"""
+        """Print a list in sorted ascending order."""
         print(sorted(self))
