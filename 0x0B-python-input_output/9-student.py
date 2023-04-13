@@ -10,7 +10,6 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    @property
     def to_json(self):
         """retrieves the dictionary representation of Student class"""
         return Student.__dict__
