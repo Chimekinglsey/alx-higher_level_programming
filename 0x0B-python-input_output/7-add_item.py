@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""MODULE 8: ADD ALL ARGS"""
+"""MODULE 8: ADD ALL ARGS into a file and save as JSON file"""
 
 
 from sys import argv
