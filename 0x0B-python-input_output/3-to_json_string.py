@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 """ Module FOUR: JSON converter FUnction."""
+import json
 
 
 def to_json_string(my_obj):
