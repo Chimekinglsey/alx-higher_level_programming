@@ -13,4 +13,4 @@ class Student:
     @property
     def to_json(self):
         """retrieves the dictionary representation of Student class"""
-        return self.__dict__
+        return Student.__dict__
