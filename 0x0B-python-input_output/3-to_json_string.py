@@ -9,5 +9,4 @@ def to_json_string(my_obj):
     of a given object
     @Args: my_obj
     """
-    new_obj = json.dumps(my_obj)
-    return (new_obj)
+    return json.dumps(my_obj)
