@@ -1,18 +1,31 @@
 #!/usr/bin/python3
-"""MODULE 11: STUDEN TO JSON WITH FILTER"""
+"""Defines a class Student."""
 
 
 class Student:
-    """This class defines as args: student first and lastname, + age"""
+    """Represent a student."""
+
     def __init__(self, first_name, last_name, age):
-        """we instantiate our pubic attributes for Student class"""
+        """Initialize a new Student.
+
+        Args:
+            first_name (str): The first name of the student.
+            last_name (str): The last name of the student.
+            age (int): The age of the student.
+        """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """retrieves the dictionary representation of Student class"""
-        if isinstance(attrs, list) and isinstance((all(attrs)), str):
-            for elem in attrs:
-                return elem.__dict__
-        return (self).__dict__
+        """Get a dictionary representation of the Student.
+
+        If attrs is a list of strings, represents only those attributes
+        included in the list.
+
+        Args:
+            attrs (list): (Optional) The attributes to represent.
+        """
+        if isinstance(attrs, list) and all(type(el) == str for el in attrs)):
+            return {el: getattr(self, el) for el in attrs if hasattr(self, el)}
+        return self.__dict__
