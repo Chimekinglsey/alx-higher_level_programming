@@ -112,7 +112,7 @@ class Rectangle(Base):
         5th argument should be the y attribute
         """
         if args is None or len(args) <= 0:
-            if kwargs is None or len kwargs <= 0:
+            if kwargs is None or len(kwargs) <= 0:
                 return
             else:
                 k_dic = {}
@@ -130,7 +130,6 @@ class Rectangle(Base):
                         self.__x = v
                     elif k == "y":
                         self.__y = v
-        else:
         argval = []
         item = 0
         arglen = len(args)
