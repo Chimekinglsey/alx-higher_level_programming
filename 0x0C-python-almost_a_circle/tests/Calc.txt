@@ -1,0 +1,39 @@
+=====================
+#Test for calc.py
+=====================
+
+>>> import unittest
+>>> calc =  __import__('calc').Calc
+>>> calc.add(5, 10)
+15
+>>> calc.add(12, -4)
+8
+>>> calc.sub(8, 10)
+-2
+>>> calc.sub(10, 3)
+7.00
+
+>>> calc.mul(4, 3)
+12
+>>> calc.mul(7, 3)
+21
+>>> calc.mul(-2, -2)
+4
+>>> calc.mod(5, 2)
+1
+>>> calc.mod(7, 7)
+0
+>>> calc.div(16, 2)
+8.00
+>>> calc.div(90, 0)
+Traceback (most recent call last):
+ZeroDivision Error: b must not be "0"
+
+>>> calc.div(-5, 2)
+-2.50
+>>> calc.sub(5, "a")
+Traceback (most recent call last):
+TypeError
+
+if '__name__' = '__main__':
+unittest.main()
