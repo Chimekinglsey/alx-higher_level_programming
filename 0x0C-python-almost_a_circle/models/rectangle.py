@@ -11,7 +11,7 @@ class Rectangle(Base):
        @__height: height of rectangle
        @__x: x cordinate of rectangle
        @__y: y cordinate of rectangle
-       @id: inherited fr\o\m Base class of rectangle set to None
+       @id: inherited from Base class of rectangle set to None
     All arguments are private
     """
 
@@ -98,14 +98,14 @@ class Rectangle(Base):
 
     def __str__(self):
         """Prints [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        return(str("[Rectangle] ({}) {}/{} - {}/{}\
+        return (str("[Rectangle] ({}) {}/{} - {}/{}\
 ".format(self.id, self.__x, self.__y, self.__width, self.__height)))
 
     def update(self, *args, **kwargs):
         """
         This method uses commandline args to assign values.
-		Args:
-		1st argument should be the id attribute
+        Args:
+        1st argument should be the id attribute
         2nd argument should be the width attribute
         3rd argument should be the height attribute
         4th argument should be the x attribute
@@ -119,7 +119,8 @@ class Rectangle(Base):
                 for k, v in kwargs.items():
                     if k == "id":
                         if v is None:
-                            self.__init__(self.__width, self.__height, self.__x, self.__y)
+                            self.__init__(self.__width,
+                                          self.__height, self.__x, self.__y)
                         else:
                             self.id = v
                     elif k == "width":
@@ -135,7 +136,6 @@ class Rectangle(Base):
         arglen = len(args)
         for items in args:
             argval.append(args[-1])
-        
         if len(args) == 1:
             self.id = argval[0]
         elif len(args) == 2:
