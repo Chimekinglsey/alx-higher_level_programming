@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 from models.rectangle import Rectangle
-"""MODULE 10: AND NOW, THE SQUARE"""
+"""
+MODULE 10: AND NOW, THE SQUARE
+"""
 
 
 class Square(Rectangle):
@@ -11,7 +13,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Initializing Square class with additional size attribute
         Args:
-        @size: size of both width and height 
+        @size: size of both width and height
         @x: value of x cordinate
         @y: value of y cordinate
         @id: object integer id
@@ -19,6 +21,9 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """Returns formatted output for print"""
+        """
+        Returns formatted output for print
+        return format: [Square] (<id>) <x>/<y> - <size>
+        """
         return "[Square] ({}) {}/{} - {}".format(self.id,
                                                  self.x, self.y, self.width)
