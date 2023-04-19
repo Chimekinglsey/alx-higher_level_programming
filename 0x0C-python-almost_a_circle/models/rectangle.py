@@ -7,21 +7,20 @@ from sys import argv
 class Rectangle(Base):
     """This class inherits from the base class
        args:
-       @__width: width of rectangle
-       @__height: height of rectangle
-       @__x: x cordinate of rectangle
-       @__y: y cordinate of rectangle
+       @width: width of rectangle
+       @height: height of rectangle
+       @x: x cordinate of rectangle
+       @y: y cordinate of rectangle
        @id: inherited from Base class of rectangle set to None
-    All arguments are private
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializing our class for instance Objects"""
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -70,7 +69,7 @@ class Rectangle(Base):
         """getter method for y"""
         return self.__y
 
-    @x.setter
+    @y.setter
     def y(self, val):
         """setter method for y"""
         if type(val) is not int:
@@ -81,25 +80,25 @@ class Rectangle(Base):
 
     def area(self):
         """Calculates the area of rectangle"""
-        return (self.__width * self.height)
+        return (self.width * self.height)
 
     def display(self):
         """Prints Rectangle instance with the character # to the stdout"""
         count = 0
         self.count = count
-        [print("") for i in range(self.__y)]
-        [print(" ", end="") for j in range(self.__x)]
-        for i in range(self.__height):
-            [print("#", end="") for j in range(0, self.__width)]
+        [print("") for i in range(self.y)]
+        [print(" ", end="") for j in range(self.x)]
+        for i in range(self.height):
+            [print("#", end="") for j in range(0, self.width)]
             print()
             self.count += 1
-            if (self.count < self.__height):
-                [print(" ", end="") for j in range(self.__x)]
+            if (self.count < self.height):
+                [print(" ", end="") for j in range(self.x)]
 
     def __str__(self):
         """Prints [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
         return (str("[Rectangle] ({}) {}/{} - {}/{}\
-".format(self.id, self.__x, self.__y, self.__width, self.__height)))
+".format(self.id, self.x, self.y, self.width, self.height)))
 
     def update(self, *args, **kwargs):
         """
@@ -112,37 +111,39 @@ class Rectangle(Base):
         5th argument should be the y attribute
         """
         if args is None or len(args) <= 0:
+            self.__init__(self.width,
+                          self.height, self.x, self.y)
             if kwargs is None or len(kwargs) <= 0:
                 return
             else:
-                k_dic = {}
                 for k, v in kwargs.items():
                     if k == "id":
                         if v is None:
-                            self.__init__(self.__width,
-                                          self.__height, self.__x, self.__y)
+                            self.__init__(self.width,
+                                          self.height, self.x, self.y)
                         else:
                             self.id = v
                     elif k == "width":
-                        self.__width = v
+                        self.width = v
                     elif k == "height":
-                        self.__height = v
+                        self.height = v
                     elif k == "x":
-                        self.__x = v
+                        self.x = v
                     elif k == "y":
-                        self.__y = v
-        argval = []
-        item = 0
-        arglen = len(args)
-        for items in args:
-            argval.append(args[-1])
-        if len(args) == 1:
-            self.id = argval[0]
-        elif len(args) == 2:
-            self.__width = argval[1]
-        elif len(args) == 3:
-            self.__height = argval[2]
-        elif len(args) == 4:
-            self.__x = argval[3]
-        elif len(args) == 5:
-            self.__y = argval[4]
+                       self.y = v
+        else:
+            argval = []
+            item = 0
+            arglen = len(args)
+            for items in args:
+                argval.append(args[-1])
+            if len(args) == 1:
+                self.id = argval[0]
+            elif len(args) == 2:
+                self.width = argval[1]
+            elif len(args) == 3:
+                self.height = argval[2]
+            elif len(args) == 4:
+                self.x = argval[3]
+            elif len(args) == 5:
+                self.y = argval[4]
