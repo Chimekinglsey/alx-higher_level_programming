@@ -148,8 +148,7 @@ class Rectangle(Base):
             elif len(args) == 5:
                 self.y = argval[4]
 
-
     def to_dictionary(self):
         """returns dictionary representation of a Rectangle"""
         return {"id": self.id, "x": self.x, "y": self.y,
-"height": self.height, "width": self.width}
+                "height": self.height, "width": self.width}
