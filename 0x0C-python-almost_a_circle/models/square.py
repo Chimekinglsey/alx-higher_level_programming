@@ -20,14 +20,6 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        """
-        Returns formatted output for print
-        return format: [Square] (<id>) <x>/<y> - <size>
-        """
-        return "[Square] ({}) {}/{} - {}".format(self.id,
-                                                 self.x, self.y, self.width)
-
     @property
     def size(self):
         """getter method for size (width and height)"""
@@ -42,3 +34,42 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = val
         self.height = val
+
+    def update(self, *args, **kwargs):
+        """this method allows assignment to class instance attributes"""
+        if args is not None and len(args) > 0:
+            arglist = []
+            for item in args:
+                arglist.append(args[-1])
+            if len(arglist) == 1:
+                self.id = arglist[0]
+            elif len(arglist) == 2:
+                self.size = arglist[1]
+            elif len(arglist) == 3:
+                self.x = arglist[2]
+            elif len(arglist) == 4:
+                self.y = arglist[3]
+        elif kwargs is not None and len(kwargs) > 0:
+            for k,v in kwargs.items():
+
+                if k == "id":
+                    if v == None:
+                        self.__init__(size, size, x, y, id)
+                    else:
+                        self.id = v
+                elif k == "size":
+                    self.size = v
+
+                elif k == "x":
+                    self.x = v
+
+                elif k == "y":
+                    self.y = v
+
+    def __str__(self):
+        """
+        Returns formatted output for print
+        return format: [Square] (<id>) <x>/<y> - <size>
+        """
+        return "[Square] ({}) {}/{} - {}".format(self.id,
+                                                 self.x, self.y, self.width)
