@@ -38,6 +38,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """this method allows assignment to class instance attributes"""
         if args is not None and len(args) > 0:
+
             arglist = []
             for item in args:
                 arglist.append(args[-1])
@@ -49,20 +50,18 @@ class Square(Rectangle):
                 self.x = arglist[2]
             elif len(arglist) == 4:
                 self.y = arglist[3]
-        elif kwargs is not None and len(kwargs) > 0:
-            for k,v in kwargs.items():
 
+        elif kwargs is not None and len(kwargs) > 0:
+            for k, v in kwargs.items():
                 if k == "id":
-                    if v == None:
+                    if v is None:
                         self.__init__(size, size, x, y, id)
                     else:
                         self.id = v
                 elif k == "size":
                     self.size = v
-
                 elif k == "x":
                     self.x = v
-
                 elif k == "y":
                     self.y = v
 
