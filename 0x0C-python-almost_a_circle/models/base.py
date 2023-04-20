@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """MODULE 1: BASE CLASS"""
+import json
 
 
 class Base:
@@ -15,3 +16,10 @@ class Base:
             self.id = Base.__nb_objects 
         else:
             self.id = id
+
+    def to_json_string(list_dictionaries):
+        """returns JSON string rep of list_dictionaries"""
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        string = json.dumps(list_dictionaries)
+        return string
