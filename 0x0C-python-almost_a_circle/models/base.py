@@ -38,3 +38,10 @@ class Base:
                 f.write(Base.to_json_string(list_dicts))
 #            jfile = Base.to_json_string(list_dicts)
 #            new_json = json.dump(jfile, f)
+
+    def from_json_string(json_string):
+        """this method returns a list of JSON string representation"""
+        if json_string is None or len(json_string) == 0:
+            return "[]"
+        else:
+            return json.loads(json_string)
