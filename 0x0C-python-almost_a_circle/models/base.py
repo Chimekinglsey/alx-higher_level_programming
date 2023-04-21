@@ -39,7 +39,7 @@ class Base:
 #            jfile = Base.to_json_string(list_dicts)
 #            new_json = json.dump(jfile, f)
 
-    @classmethod
+    @staticmethod
     def from_json_string(json_string):
         """this method returns a list of JSON string representation"""
         if json_string is None or len(json_string) == 0:
