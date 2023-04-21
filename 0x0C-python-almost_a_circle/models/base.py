@@ -70,6 +70,7 @@ class Base:
         try:
             filename = cls.__name__ + ".json"
             with open(filename, "r") as fp:
-                return (Base.from_json_string(fp.read()))
+                dict_list = Base.from_json_string(fp.read())
+                return [cls.create(**item) for item in dict_list]
         except Exception:
             return "[]"
