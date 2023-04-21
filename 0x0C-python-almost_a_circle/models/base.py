@@ -39,7 +39,7 @@ class Base:
 #            jfile = Base.to_json_string(list_dicts)
 #            new_json = json.dump(jfile, f)
 
-    @staticmethod
+    @classmethod
     def from_json_string(json_string):
         """this method returns a list of JSON string representation"""
         if json_string is None or len(json_string) == 0:
@@ -47,16 +47,24 @@ class Base:
         else:
             return json.loads(json_string)
 
-    @staticmethod
+    @classmethod
     def create(cls=None, **dictionary):
-        """this method returns an instance with all attributes already set"""
+        """this method returns an instance with all attributes already set
         if dictionary and dictionary != {}:
-            obj = lambda:None
-            obj2 = Rectangle(obj)
+            obj2 = Rectangle()
             obj2.update(**dictionary)
             return obj2
+        """
 
-    @staticmethod
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+            new.update(**dictionary)
+            return new
+
+    @classmethod
     def load_from_file(cls):
         """returns list of instances"""
         try:
