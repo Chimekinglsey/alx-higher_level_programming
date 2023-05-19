@@ -2,4 +2,9 @@
 -- in the hbtn_0d_usa database
 USE hbtn_0d_usa;
 --SELECT * FROM states WHERE 'name' = 'California' ASC AND 'id' = SELECT city_id FROM city where 'name' = 'California'
-SELECT id,name FROM cities WHERE state_id = (SELECT id FROM states WHERE name = 'California') ORDER BY cities.id ASC;
+SELECT cities.id, state.state_id, cities.name 
+FROM cities, states 
+WHERE state.state_id = 
+	(SELECT state.state_id
+	FROM state WHERE state.name = 'California') 
+ORDER BY cities.id ASC;
