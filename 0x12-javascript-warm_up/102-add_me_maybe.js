@@ -2,6 +2,6 @@
 
 exports.addMeMaybe = function (number, theFunction) {
 	number++;
-    theFunction(number);
+    return theFunction(number);
   }
 }
