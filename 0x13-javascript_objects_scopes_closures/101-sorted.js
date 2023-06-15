@@ -11,4 +11,3 @@ const newDict = Object.entries(dict).reduce((acc, [userId, occurrence]) => {
 }, {});
 
 console.log(newDict);
-
