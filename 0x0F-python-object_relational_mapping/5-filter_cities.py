@@ -20,11 +20,16 @@ if __name__ == '__main__':
 
     query = "SELECT cities.name FROM cities INNER JOIN states ON \
         cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id"
-    cursor.execute(query, (name_searched,))
+  store =  cursor.execute(query, (name_searched,))
 
     result = cursor.fetchall()
+    counter = 1
     for row in result:
-        print(row[0])
+        print(row[0], end='')
+        if counter < store:
+            print(end=', ')
+        counter += 1
+    print("")
 
     cursor.close()
     db.close()
