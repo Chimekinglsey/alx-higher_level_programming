@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This scripts takes four arguments and performs 
+This scripts takes four arguments and performs
 SQL operationsonthem
 """
 import MySQLdb
