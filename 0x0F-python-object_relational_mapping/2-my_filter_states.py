@@ -11,8 +11,10 @@ if __name__ == '__main__':
     db_name = argv[3]
     name_searched = argv[4]
 
-    db = MySQLdb.connect(host='localhost', user=username, passwd=password,
-        port=3306, db=db_name)
+    db = MySQLdb.connect(
+        host='localhost', user=username, passwd=password,
+        port=3306, db=db_name
+     )
     cursor = db.cursor()
     query = "SELECT * FROM states WHERE BINARY state.name =
     {}.format(name_searched) ORDER BY state.id"
