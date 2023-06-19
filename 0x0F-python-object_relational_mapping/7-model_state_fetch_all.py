@@ -3,7 +3,7 @@
 Accessing external database called `states` using SQLAlchemy
 """
 from model_state import Base, State
-from sys import sys
+import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
