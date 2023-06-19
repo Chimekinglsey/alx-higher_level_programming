@@ -18,7 +18,5 @@ curs.execute(select_query)
 result = curs.fetchall()
 for row in result:
     print(row)
-cursor.close()
+curs.close()
 db.close()
-if __name__ == '__main__':
-    from sys import argv
