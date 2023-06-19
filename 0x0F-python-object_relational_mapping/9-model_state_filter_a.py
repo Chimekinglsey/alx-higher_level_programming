@@ -15,4 +15,4 @@ if __name__ == "__main__":
     session = Session()
     state = session.query(State).filter(State.name.like('%a%')).all()
     for row in state:
-        print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(row.id, row.name))
