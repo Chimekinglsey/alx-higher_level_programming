@@ -17,7 +17,7 @@ if __name__ == '__main__':
         port=3306, db=db_name
      )
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE BINARY state.name =
+    query = "SELECT * FROM states WHERE  BINARY state.name LIKE\
     '{}'ORDER BY state.id".format(name_searched)
     cursor.execute(query)
     result = cursor.fetchall()
