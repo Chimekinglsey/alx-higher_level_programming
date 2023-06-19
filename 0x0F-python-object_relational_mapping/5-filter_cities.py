@@ -17,9 +17,13 @@ if __name__ == '__main__':
         port=3306, db=db_name
      )
     cursor = db.cursor()
-    query = "SELECT cities.name FROM cities INNER JOIN states\
+    query = "SELECT cities.name FROM cities WHERE state_id =\
+                           (SELECT id FROM states WHERE name LIKE BINARY %s)\
+                           ORDER BY cities.id"
+    """query = "SELECT cities.name FROM cities INNER JOIN states\
                 ON cities.state_id = states.id\
                  AND state.name = %s ORDER BY cities.id"
+    """
     cursor.execute(query, (name_searched,))
     result = cursor.fetchall()
     for row in result:
