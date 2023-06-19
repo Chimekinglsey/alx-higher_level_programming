@@ -16,9 +16,9 @@ if __name__ == '__main__':
         host='localhost', user=username, passwd=password,
         port=3306, db=db_name
      )
+    query = "SELECT * FROM states WHERE BINARY name \
+    LIKE '{}%' ORDER BY state.id".format(name_searched)
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE  BINARY state.name LIKE\
-                    '{}'ORDER BY state.id".format(name_searched)
     cursor.execute(query)
     result = cursor.fetchall()
     for row in result:
