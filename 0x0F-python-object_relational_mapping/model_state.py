@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 """
-Using sqlalchemy to implement MySQLdb server connection
+We are progressing to use ORM declarative_base for Syncing
 """
-from sqlalchemy.ext.declaratives import declarative_base
-from sqlalchemy import Integer, String, MetaData, Column
+from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy.ext.declarative import declarative_base
 
 metadata = MetaData()
 Base = declarative_base(metadata)
 
 
 class State(Base):
-    """This state class inherits from Base class that allows us to dynamically
-    the connection object and use it to create a table"""
+    """
+    This inherits from our Base class. Creates table using MetaData()
+    """
     __tablename__ = 'states'
-    id = Column(Integer, autoincrement=True, unique=True, nullable=False,
-                primary_key=True)
-    name = Column(String(128), nullable=True)
+    id = Column(Integer, unique=True, nullable=False, primary_key=True)
+    name = Column(String(128), nullable=False)
