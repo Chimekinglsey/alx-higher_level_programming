@@ -18,9 +18,9 @@ if __name__ == '__name__':
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/\
                     {}').format(username, passowrd, db_name)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    Base.metadata.create_all(engine)
     query = session.query(State).order_by(State.id).all()
     for row in query:
         print("{}: {}".format(row.id, row.name))
