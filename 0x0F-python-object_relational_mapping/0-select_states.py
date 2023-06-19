@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+"""We are importing MySQLdb module from Python library to aid our
+        transactions"""
 import MySQLdb
 from sys import argv
 
-"""We are importing MySQLdb module from Python library to aid our
-        transactions"""
 if __name__ == '__main__':
     username = argv[1]
     password = argv[2]
