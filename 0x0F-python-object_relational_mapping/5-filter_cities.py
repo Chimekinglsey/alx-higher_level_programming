@@ -1,35 +1,34 @@
 #!/usr/bin/python3
 """
-This scripts takes four arguments and performs
-SQL operations on them
+This program takes 4 arguments as command-line inputs
+reads the last argv uses the value to manipulate our SQL tables
 """
 import MySQLdb
-from sys import argv
+import sys
+
 
 if __name__ == '__main__':
-    username = argv[1]
-    password = argv[2]
-    db_name = argv[3]
-    name_searched = argv[4]
-
-    db = MySQLdb.connect(
-        host='localhost', user=username, passwd=password,
-        port=3306, db=db_name
-    )
-    cursor = db.cursor()
-
-    query = "SELECT cities.name FROM cities INNER JOIN states ON \
-        cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id"
-  store =  cursor.execute(query, (name_searched,))
-
-    result = cursor.fetchall()
-    counter = 1
-    for row in result:
+    args = sys.argv
+    if len(args) != 5:
+        print("Usage: {} username password database_name".format(args[0]))
+        exit(1)
+    username = args[1]
+    password = args[2]
+    data = args[3]
+    state_name = args[4]
+    db = MySQLdb.connect(host='localhost', user=username,
+                         passwd=password, db=data, port=3306)
+    cur = db.cursor()
+    num_rows = cur.execute("SELECT cities.name FROM cities WHERE state_id =\
+                           (SELECT id FROM states WHERE name LIKE BINARY %s)\
+                           ORDER BY cities.id;", (state_name, ))
+    rows = cur.fetchall()
+    i = 1
+    for row in rows:
         print(row[0], end='')
-        if counter < store:
+        if i < num_rows:
             print(end=', ')
-        counter += 1
-    print("")
-
-    cursor.close()
+        i += 1
+    print()
+    cur.close()
     db.close()
