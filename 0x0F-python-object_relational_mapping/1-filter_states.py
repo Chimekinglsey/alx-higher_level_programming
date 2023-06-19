@@ -14,7 +14,7 @@ if __name__ == '__main__':
         port=3306, db=db_name)
     curs = db.cursor()
 
-    select_query = "SELECT * FROM states WHERE name[0]=='N'"
+    select_query = "SELECT * FROM states WHERE name LIKE 'N%'"
     curs.execute(select_query)
     result = curs.fetchall()
     for row in result:
