@@ -5,7 +5,7 @@ from sys import argv
 """We are importing MySQLdb module from Python library to aid our
         transactions"""
 if __name__ == '__main__':
-    user = argv[1]
+    username = argv[1]
     password = argv[2]
     db_name = argv[3]
 
