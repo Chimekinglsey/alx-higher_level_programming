@@ -20,6 +20,7 @@ if __name__ == '__name__':
                     {}').format(username, passowrd, db_name)
     Session = sessionmaker(bind=engine)
     session = Session()
+    Base.metadata.create_all(engine)
     query = session.query(State).order_by(State.id).all()
     for row in query:
         print("{}: {}".format(row.id, row.name))
