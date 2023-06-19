@@ -8,13 +8,14 @@ if __name__ == '__main__':
     password = argv[2]
     db_name = argv[3]
 
-    db = MySQLdb.connect(
-        host='localhost',
-        user=username, passwd=password,
-        port=3306, db=db_name
-        )
+    db = MySQLdb.connect(host='localhost',
+                         user=username, passwd=password,
+                         port=3306, db=db_name)
     cursor = db.cursor()
-    query = "SELECT * FROM cities ORDER BY cities.id"
+    query = "SELECT cities.id, cities.name, states.name\
+                           FROM cities INNER JOIN states\
+                           ON cities.state_id=states.id\
+                           ORDER BY cities.id;"
     cursor.execute(query)
     result = cursor.fetchall()
     for row in result:
