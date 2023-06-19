@@ -19,7 +19,7 @@ if __name__ == '__main__':
     query = "SELECT * FROM states WHERE BINARY state.name =
     '{}'ORDER BY state.id".format(name_searched)
     cursor.execute(query)
-    result = cursor.all()
+    result = cursor.fetchall()
     for row in result:
         print(row)
     cursor.close()
