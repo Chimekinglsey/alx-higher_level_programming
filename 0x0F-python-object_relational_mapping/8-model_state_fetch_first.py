@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State).first()
-    if (!state):
-        print("Nothing", end='\n')
+    if state is None:
+        print("Nothing")
     for row in state:
         print("{}: {}".format(row.id, row.name))
