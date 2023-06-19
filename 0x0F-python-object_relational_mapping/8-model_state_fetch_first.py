@@ -17,4 +17,4 @@ if __name__ == "__main__":
     if state is None:
         print("Nothing")
     else:
-        print("{}: {}".format(row.id, row.name))
+        print("{}: {}".format(state.id, state.name))
