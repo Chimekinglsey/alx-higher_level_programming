@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This scripts takes four arguments and performs
-SQL operationsonthem
+SQL operations on them
 """
 import MySQLdb
 from sys import argv
@@ -15,14 +15,16 @@ if __name__ == '__main__':
     db = MySQLdb.connect(
         host='localhost', user=username, passwd=password,
         port=3306, db=db_name
-     )
+    )
     cursor = db.cursor()
-    query = "SELECT cities.name FROM cities WHERE state_id =\
-                           (SELECT id FROM states WHERE name LIKE BINARY = %s)\
-                           ORDER BY cities.id"
+
+    query = "SELECT cities.name FROM cities INNER JOIN states ON \
+        cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id"
     cursor.execute(query, (name_searched,))
+
     result = cursor.fetchall()
     for row in result:
-        print(row)
+        print(row[0])
+
     cursor.close()
     db.close()
