@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import MySQLdb
-import sys
+from sys import argv
 """
 We are using INNER JOIN. First we select the colums we want to return, in this
 case, cities.id, cities.name, states.name FROM the tables containing these
@@ -9,7 +9,6 @@ to use INNER JOIN  `states` but what we want from states table is the column
 where the state_id column in cities matches with `id` column in states
 """
 if __name__ == '__main__':
-    argv = sys.argv
     username = argv[1]
     password = argv[2]
     db_name = argv[3]
