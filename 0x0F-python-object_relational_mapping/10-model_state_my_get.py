@@ -16,5 +16,5 @@ if __name__ == "__main__":
     state_count = session.query(State).filter(State.name == (argv[4],))
     try:
         print(state_count[0].id)
-    except e:
+    except IndexError:
         print("Not found")
