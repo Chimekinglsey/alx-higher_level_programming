@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state_count = session.query(State).filter(State.name == (argv[4]))
+    state_count = session.query(State).filter(State.name == (argv[4], ))
     if state_count[0].id:
         print(state_count[0].id)
     else:
