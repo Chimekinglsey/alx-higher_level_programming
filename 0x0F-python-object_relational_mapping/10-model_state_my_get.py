@@ -14,5 +14,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter(State.name = %s, (state_name)).count()
-    print(state)
+    state_count = session.query(State).filter(State.name == :name)\
+    .params(name=state_name).count()
+    print(state_count)
