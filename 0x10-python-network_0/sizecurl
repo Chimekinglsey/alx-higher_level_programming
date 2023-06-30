@@ -1,3 +1,0 @@
-     --ignore-content-length Ignore the size of the remote resource
-     --max-filesize <bytes> Maximum file size to download
-     --tftp-blksize <value> Set TFTP BLKSIZE option

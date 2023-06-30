@@ -1,3 +1,3 @@
 #!/bin/bash
-# Take an URL, send a request and get size of response in byte
-curl -Is "$1" | grep Content-Length | cut -f2 -d' '
+#This command takes a URL and dislays the size of the response
+curl -sI $1 | grep Content-Length | cut -d " " -f 2
