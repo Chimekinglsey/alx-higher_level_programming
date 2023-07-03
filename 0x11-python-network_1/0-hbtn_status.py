@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""This is MODULE:0 - Using urllib"""
+"""
+This is MODULE:0 - Using urllib
+0. What's my status? #0
+"""
 
 import urllib.request
 
@@ -13,6 +16,3 @@ if __name__ == "__main__":
     print("Body response:\n\t - type: {}\n\t - co\
 ntent: {}\n\t - utf8 content: \
 {}".format(content_type, content, utf8_content))
-
-
-    
