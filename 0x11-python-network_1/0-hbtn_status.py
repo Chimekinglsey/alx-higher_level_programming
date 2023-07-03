@@ -13,6 +13,6 @@ if __name__ == "__main__":
         content = resp.read()
         utf8_content = content.decode('UTF-8')
         content_type = type(content)
-    print("Body response:\n\t - type: {}\n\t - co\
-ntent: {}\n\t - utf8 content: \
+    print("Body response:\n\t- type: {}\n\t- co\
+ntent: {}\n\t- utf8 content: \
 {}".format(content_type, content, utf8_content))
