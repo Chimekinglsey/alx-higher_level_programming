@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    This is MODULE:8
+    cOULD HEADER BE A PROBLEM? This is MODULE:8
     JSON string
 """
 from sys import argv
