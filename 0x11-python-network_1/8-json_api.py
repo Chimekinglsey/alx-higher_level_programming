@@ -2,6 +2,7 @@
 """
     cOULD HEADER BE A PROBLEM? This is MODULE:8
     JSON string
+    Author: Chime Kings
 """
 from sys import argv
 import requests
