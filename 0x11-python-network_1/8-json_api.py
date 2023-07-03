@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
-thIS IS MODULE 8 
+thIS IS MODULE 8
 Trucking
 chimekinglsey
 """
@@ -22,6 +22,5 @@ if __name__ == "__main__":
             print('No result')
         else:
             print('[{}] {}'.format(obj['id'], obj['name']))
-    except:
+    except Exception:
         print('Not a valid JSON')
-
