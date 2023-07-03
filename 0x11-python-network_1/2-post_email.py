@@ -13,6 +13,6 @@ if __name__ == "__main__":
     data = email.encode('ascii')
     req = request.Request(url, data)
     with request.urlopen(req) as resp:
-        decode = resp.decode("utf-8")
+        decode = resp.decode('utf-8')
         display = decode.read()
         print(display)
