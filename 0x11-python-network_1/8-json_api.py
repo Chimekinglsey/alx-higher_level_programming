@@ -1,23 +1,27 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 """
-    cOULD HEADER BE A PROBLEM? This is MODULE:8
-    JSON string
-    Author: Chime Kings
+thIS IS MODULE 8 
+Trucking
+chimekinglsey
 """
+from requests import post, codes
 from sys import argv
-import requests
+
 
 if __name__ == "__main__":
-    if !argv[1]:
-        letter = {'q': ""}
-    letter = {'q': argv[1]}
     url = 'http://0.0.0.0:5000/search_user'
-    response = requests.post(url, data=letter)
+    if len(argv) > 1:
+        q = {'q': argv[1]}
+    else:
+        q = {'q': ''}
+    response = post(url, data=q)
     try:
-        json_obj = response.json()
-        if len(json_obj) > 0:
-            print("[{}] {}".format(json_obj.get('id'), json_obj.get('name')))
+        obj = response.json()
+        if len(obj) == 0:
+            print('No result')
         else:
-            print("Not a valid JSON")
-    except Exception:
-        print("No result")
+            print('[{}] {}'.format(obj['id'], obj['name']))
+    except:
+        print('Not a valid JSON')
+
