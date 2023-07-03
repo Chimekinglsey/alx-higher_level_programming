@@ -9,5 +9,5 @@ import requests
 
 if __name__ == "__main__":
     url = argv[1]
-    req = requests.get(url, params={'email': argv[2]},)
-    print(req.text)
+    response = requests.get(url, data={'email': argv[2]},)
+    print(response.text)
