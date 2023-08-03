@@ -1,0 +1,11 @@
+$(function () {
+  $('DIV#toggle_header').click(toggleColor);
+});
+
+function toggleColor () {
+  if ($('header').hasClass('green')) {
+    $('header').removeClass('green').addClass('red');
+  } else {
+    $('header').removeClass('red').addClass('green');
+  }
+}
